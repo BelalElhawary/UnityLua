@@ -3,8 +3,13 @@
 # UnityLua
 Lua scripting language support for the Unity game engine 
 
+* [About](#about-unitylua)
+* [HelloWorld](#helloworld)
+* [Supported Platforms](#supported-platforms)
+* [Performance](#performance)
+
 ## About UnityLua
-UnityLua uses platform-specific pre-compiled lua library with KeraLua as a c# interface, so you technically use lua native interpreter in your game wither for simplifying the development process or for adding modding support UnityLua got your back.
+UnityLua uses platform-specific pre-compiled lua library with [KeraLua](https://github.com/NLua/KeraLua) as a c# interface, so you technically use lua native interpreter in your game wither for simplifying the development process or for adding modding support UnityLua got your back.
 
 ## HelloWorld
 to add UnityLua to your project all you need to do is to import the package from the latest release
