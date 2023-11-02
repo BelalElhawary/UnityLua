@@ -124,9 +124,11 @@ WebGl - `working on it`
 IOS - `working on it`
 
 ## Performance
-Unity lua is about 30 - 35 times faster than moonsharp
-| Test        | UnityLua | MoonSharp |
-|-------------|----------|-----------|
-| Fibonacci   | 5.25s    | 166.5s    |
-| Binary Tree | 3.5s     | 133s      |
-| Zoo         | 2.7s     | 80s       |
+Unity lua is about 70 times faster than moonsharp
+
+| Test          | UnityLua | MoonSharp | Native CSharp |
+|---------------|----------|-----------|---------------|
+| Fibonacci     | 0.84s    | 62.32s    | 0.07s         |
+| Instantiation | 0.39s    | 26.10s    | 0.94s         |
+| Binary Trees  | 0.48s    | 40.61s    | 0.46s         |
+| Zoo           | 0.31s    | 18.81s    | 0.02s         |
