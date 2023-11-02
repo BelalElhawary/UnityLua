@@ -69,14 +69,14 @@ to try this out let's run some lua code
 ```c#
 // after lua.SetGlobal("print")
 
-// this will tell lua to parse and run this code
-// if lua failed to parse the code it will return true
+// pass the code to lua to parse and run
+// if lua fails to parse the code it will return true
+// and pushes the error message to the top of the stack
 bool failed = lua.DoString(@"
 print('Hello from lua')
 ");
 
-// if failed lets print some error message
-// when lua fail to run code it will push the error message to the top of the stack
+// if failed we print error message to the console
 // all you need to do is to take the stack top value and print it
 if(failed)
     Debug.LogError(lua.ToString(-1));
