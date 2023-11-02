@@ -24,7 +24,7 @@ or
 ``` c#
 using(Lua lua = new Lua())
 {
-
+    // Here goes your logic
 }
 ```
 lua doesn't know about our unity logger so let's start by replacing the lua default print with our own print function
@@ -63,7 +63,7 @@ lua.SetGlobal("print")
 ```
 now we have replaced lua default print with our own C# function
 
-to try this out lets run some lua code
+to try this out let's run some lua code
 ```c#
 // after lua.SetGlobal("print")
 
