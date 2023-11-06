@@ -1,7 +1,7 @@
-<img  align="left" src="https://github.com/BelalElhawary/UnityLua/blob/main/unity_lua_logo.png " alt="image" width="80" height="80">
+<img align="left" src="https://github.com/BelalElhawary/UnityLua/blob/main/unity_lua_logo.png " alt="image" width="80" height="80">
 
 # UnityLua
-Lua scripting language support for the Unity game engine 
+Lua scripting support for the Unity game engine 
 
 * [About](#about-unitylua)
 * [HelloWorld](#helloworld)
@@ -9,7 +9,7 @@ Lua scripting language support for the Unity game engine
 * [Performance](#performance)
 
 ## About UnityLua
-UnityLua uses platform-specific pre-compiled lua library with [KeraLua](https://github.com/NLua/KeraLua) as a c# interface, so you technically use lua native interpreter in your game wither for simplifying the development process or for adding modding support UnityLua got your back.
+UnityLua uses platform-specific pre-compiled **Lua5.4** library with [**KeraLua**](https://github.com/NLua/KeraLua) as a c# interface, so you technically use lua native interpreter in your game wither for simplifying the development process or for adding modding support UnityLua got your back.
 
 ## HelloWorld
 to add UnityLua to your project all you need to do is to import the package from the latest release
@@ -42,10 +42,11 @@ private static int Print(IntPtr ptr)
     // first we get the lua instance from the pointer
     Lua lua = Lua.FromIntPtr(ptr);
 
-    // lua push it's function arguments to the stack by reversing it's order
-    // this is meaning the if we get 3 arguments the first one will be -3 the second -2 and so on
+    // lua push it's function arguments to the stack like push arg1 push arg2 etc
+    // when we pop the arguments we need to reverse it's order, so if we get 3 arguments the first one will be -3 the second -2 and so on
     // our function only gets one argument so we will take the -1 (value on the top of the stack) as string (this will convert any bool or number value to string automatically by lua)
     string message = lua.ToString(-1);
+    
     // finally we pass this value to our unity logger
     Debug.Log(message);
 
@@ -129,11 +130,11 @@ WebGl - `working on it`
 IOS - `working on it`
 
 ## Performance
-Unity lua is about 70 times faster than moonsharp
+Unity lua is about 70 times faster than [**MoonSharp**](https://github.com/moonsharp-devs/moonsharp/)
 
-| Test          | UnityLua | MoonSharp | Native CSharp |
-|---------------|----------|-----------|---------------|
-| Fibonacci     | 0.84s    | 62.32s    | 0.07s         |
-| Instantiation | 0.39s    | 26.10s    | 0.94s         |
-| Binary Trees  | 0.48s    | 40.61s    | 0.46s         |
-| Zoo           | 0.31s    | 18.81s    | 0.02s         |
+| Test          | UnityLua | MoonSharp | CSharp |
+|---------------|----------|-----------|--------|
+| Fibonacci     | 0.84s    | 62.32s    | 0.07s  |
+| Instantiation | 0.39s    | 26.10s    | 0.94s  |
+| Binary Trees  | 0.48s    | 40.61s    | 0.46s  |
+| Zoo           | 0.31s    | 18.81s    | 0.02s  |
